@@ -3,7 +3,7 @@
 die("is only template");
 
 $settings=[
-    'modules'=>[]
+    'modules'=>['fs']
     
 ];
 

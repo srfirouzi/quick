@@ -74,7 +74,7 @@ class Quick{
 
         for($i=0;$i<count($mo);$i++){
             $name=ucfirst($mo[$i]).'Module';
-            $filename='/quick.php/modules/'.$name.'.php';
+            $filename='/quick/modules/'.$name.'.php';
             if(load_file($filename)){
                 $obj=new $name($this);
                 $this->_modules[$mo[$i]]=$obj;

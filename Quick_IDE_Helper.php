@@ -18,6 +18,11 @@ class Quick{
      * @var QuickResponse response element
      */
     public $res;
+    /**
+     * 
+     * @var QuickFileSystem
+     */
+    public $fs;
     
 }
 
