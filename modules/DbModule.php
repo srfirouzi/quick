@@ -5,12 +5,11 @@ class DbModule{
      * @param Quick $app
      */
     public function __construct($app){
-        $conf=$app->setting('db');
         $app->register('db', 'QuickDB',array(
-            $conf['dsn'],
-            $conf['user'],
-            $conf['pass'],
-            $conf['perfix'],
+            $app->setting('db.dsn'),
+            $app->setting('db.user'),
+            $app->setting('db.pass'),
+            $app->setting('db.perfix')
         ),'/quick/exteras/QuickDB.php');
         
     }

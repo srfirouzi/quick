@@ -70,7 +70,7 @@ class Quick{
         }
         $this->add_function('not_found', array($this,'_not_found'));
         
-        $mo=$this->setting('modules');
+        $mo=$this->setting('base.modules');
 
         for($i=0;$i<count($mo);$i++){
             $name=ucfirst($mo[$i]).'Module';

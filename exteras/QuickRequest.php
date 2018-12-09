@@ -75,7 +75,7 @@ class QuickRequest{
         $this->ip=$this->server('REMOTE_ADDR', '0.0.0.0');
         $this->agent=$this->server( 'HTTP_USER_AGENT');
         $this->secure=($this->server( 'HTTPS','')=='on'?true:false);
-        $this->path=$this->get('request_path','/');
+        $this->path=$this->get($app->setting('base.rewrite.url.name','_'),'/');
 
     }
     private function _clean_input_data($str) {

@@ -64,21 +64,21 @@ class MvcModule{
     public function __construct($app){
         $this->app=$app;
         //model
-        $conf=$app->setting('mvc');
+
         
-        $this->_model_path=$conf['model_path'];
+        $this->_model_path=$app->setting('mvc.model_path');
         
         $app->add_function('model',array($this,'model'));
         $app->add_function('__get',array($this,'model'));
         //view
         
-        $this->_view_path=BASEPATH.$conf['view_path'];
-        $this->_view_cache=BASEPATH.$conf['view_cache_path'];
+        $this->_view_path=BASEPATH.$app->setting('mvc.view.path');
+        $this->_view_cache=BASEPATH.$app->setting('mvc.view.cache.path');
         
         $app->add_function('view',array($this,'view'));
         $app->add_function('add_view_function',array($this,'add_view_function'));
         //controller
-        $this->_controller_path=$conf['controller_path'];
+        $this->_controller_path=$app->setting('mvc.controller.path');
         $app->add_function('controller',array($this,'controller'));
         $app->add_function('controller_access',array($this,'controller_access'));
         

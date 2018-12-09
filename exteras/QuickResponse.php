@@ -87,7 +87,7 @@ class QuickResponse{
      * @return string full path (relative path ref site or full path)
      */
     public function url($path=''){
-        return $this->setting('base_url').$path;
+        return $this->setting('base.url').$path;
     }
     /**
      * set redirect path
