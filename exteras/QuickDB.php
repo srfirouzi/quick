@@ -73,7 +73,7 @@ class QuickDB {
         $varname=array();
         $varvalue=array();
         
-        foreach ($data as $key=>$val ) {
+        foreach (array_keys($data) as  $key ) {
             $varname[] = '`' . $key . '`';
             $varvalue[] = ' :'.$key.' ';
         }
