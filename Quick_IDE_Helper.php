@@ -79,6 +79,27 @@ class Quick{
      * @param callable $func callback function
      */
     public function controller_access($func){}
+    /**
+     * add route for routing
+     *
+     * add new path patern to route incoming request.
+     *
+     * @param string $path path pattern fo route
+     * @param callable(QuickRequest,QuickResponse,Quick)  $func   callback function to call ,if request path match by pattern
+     * @param string $method requet path sprate by |
+     *
+     * @example
+     * $app->route('/path/:varable/!varable_maybe_not_exist/',function($req,$res,$app){},'POST');<br/>
+     * $app->route('/path/*',function($req,$res){});<br/>
+     * $app->route('/*',function($req,$res){});<br/>
+     */
+    public function route($path,$func,$method='GET|POST'){}
+    /**
+     * run micro service
+     * @param string|NULL $path for route or use QuickRequest::get('request_path') use .htaccess to map
+     * @return mixed callback function return,return
+     */
+    public function run($path=null){}
 }
 
 

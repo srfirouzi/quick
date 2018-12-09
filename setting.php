@@ -4,7 +4,7 @@ die("is only template");
 
 $settings=[
     'base_url'=>'http://127.0.0.1',
-    'modules'=>['fs','db','mvc'],
+    'modules'=>['fs','db','mvc','router'],
     'db'=>[
         'dsn'=>'mysql:host=127.0.0.1;dbname=quick',
         'user'=>'root',
