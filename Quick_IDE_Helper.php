@@ -23,6 +23,11 @@ class Quick{
      * @var QuickFileSystem
      */
     public $fs;
+    /**
+     * 
+     * @var QuickDB
+     */
+    public $db;
     
 }
 
