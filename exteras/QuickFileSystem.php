@@ -130,32 +130,13 @@ class QuickFileSystem{
                 file_put_contents ( $f, $data );
             }
     }
-    
-    function isFile($file, $path = '') {
-        if ($path == '') {
-            $file = $this->_name ( $file );
-            $n = $file;
-        } else {
-            $file = $this->_name ( $file );
-            $path = $this->_name ( $path );
-            $aa = (substr ( $path, - 1 ) == '/') ? '' : '/';
-            $n = $path . $aa . $file;
-        }
-        $n = $this->basePath . $n;
-        return @(filetype ( $n ) == 'file');
-    }
-    function isDir($file, $path = '') {
-        if ($path == '') {
-            $file = $this->_name ( $file );
-            $n = $file;
-        } else {
-            $file = $this->_name ( $file );
-            $path = $this->_name ( $path );
-            $aa = (substr ( $path, - 1 ) == '/') ? '' : '/';
-            $n = $path . $aa . $file;
-        }
-        $n = $this->basePath . $n;
-        return @(filetype ( $n ) == 'dir');
+    /**
+     * return type of file -> 'dir' or 'file'
+     * @param string $file
+     * @return string
+     */
+    function type($file){
+        return @($this->basePath . $this->_name ( $file ) == 'file')? 'file' : 'dir';
     }
     /**
      * get list of file
@@ -165,8 +146,7 @@ class QuickFileSystem{
      * @return mixed[]
      */
     function files($dir, $type = '', $mode = 'all') {
-        $dir = $this->_name ( $dir );
-        $d = $this->basePath . $dir;
+        $d = $this->basePath . $this->_name ( $dir );
         $back = array ();
         $dh = opendir ( $d );
         $size = - (strlen ( $type ) + 1);
