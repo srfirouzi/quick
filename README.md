@@ -613,8 +613,8 @@ a       b      c       d      e
 ---
 # TODO
 
-[ ] make other repo for testing
-[ ] write and complate Document and wiki
+- [ ] make other repo for testing
+- [ ] write and complate Document and wiki
 
 
 
