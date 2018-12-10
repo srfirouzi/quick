@@ -273,6 +273,76 @@ module exist in 'quick/modules' directory, by uppercase first character and add 
 
 ,must of module used extera object in 'quick/exteras' directory,and low depandacy lib
 
+## router
+
+router tools for route url to function
+
+add two function to core 
+
+- route($path,$func,$method='GET|POST')
+- run($path=null)
+
+### route(pattern,function,method='GET|POS')
+
+* pattern of request path
+* function to callback
+* method of request sprate by | (example 'GET|POST')
+
+pattern make by different part separate by /,every part maybe start by special character,special character is:
+
+1. ':' must exist and save data in request parameters ( :name = define part must exist and save in param['name']
+2. '!' mybe exist and save data in request parameters ( !name = define part mybe exist and save in param['name']
+3. '*' other parts of path mybe exist or not
+4. other  part is static
+
+#### example
+```
+pattern  "/hello/:woman/!and/!man/!other/*"
+ 
+
+request path=/hello/sun
+
+param=array(
+	'woman'=>'sun'
+)
+
+request path=/hello/ladies/and/gentleman
+param=array(
+	'woman'=>'ladies','and'=>'and','man'=>'gentleman'
+)
+
+
+request path=/hello/ata/or/micro/for/ever/and/everywhere
+param=array(
+	'womman'=>'ata','and'=>'or','man'=>'micro','other'=>'for','*'=>'/ever/and/everywhere'
+)
+
+```
+
+### run
+
+execue router selector
+
+```php
+$app->run('/my/path');
+```
+
+
+```php
+
+include 'quick/Quick.php';
+
+$app=new Quick();
+
+$app->route('/hello/:name', function($req,$res,$app){
+    $name=$req->param('name','world');
+    $res->write('hello '.$name);
+});
+    
+$app->run();
+
+```
+
 ## fs
 
 fs is module for work by file ,in real only add instanse of 'quick/exteras/QuickFileSystem' by fs name for core
@@ -409,6 +479,18 @@ $out=$app->select('user',['name'=>'ali'],[],0,0,'pass');
 
 simple mvc engine by,mvc contain three part .controller, model and view
 
+add multi function to core
+
+- controller(controllername)
+- controllerAccess(fun)
+
+- model(name)
+
+- add_view_function($name,$func)
+- view(name,data,layoutdata)
+
+
+
 ## controller
 
 ### controller(controllername)
@@ -488,17 +570,17 @@ echo $model->say();
 
 view is QuickView template engine
 
-add_view_function($name,$func)
+### add_view_function($name,$func)
 
 add function to quick view module 
 
-view(name,data,layoutdata)
+### view(name,data,layoutdata)
 
 reander view by data and return this,
 
 ---
 
-# view template
+# view template language
 
 
 ### help
