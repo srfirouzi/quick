@@ -12,7 +12,7 @@ $settings=[
     'db.pass'=>'',
     'db.perfix'=>'db_',
 
-    'mvc.model_path'=>'/models',
+    'mvc.model.path'=>'/models',
     'mvc.controller.path'=>'/controllers',
     'mvc.view.path'=>'/views',
     'mvc.view.cache.path'=>'/views/cache'

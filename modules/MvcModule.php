@@ -66,7 +66,7 @@ class MvcModule{
         //model
 
         
-        $this->_model_path=$app->setting('mvc.model_path');
+        $this->_model_path=$app->setting('mvc.model.path');
         
         $app->add_function('model',array($this,'model'));
         $app->add_function('__get',array($this,'model'));
