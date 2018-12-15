@@ -337,9 +337,8 @@ class QuickView_Parser{
     }
     
     private function parseMacro() {
-        $code=array($this->item['value'][0]);
         $out = array(
-            'code' => $code,
+            'code' => $this->item['value'],
             'block' => array()
         );
         $this->item=$this->lexer->next();
