@@ -15,7 +15,6 @@ $settings=[
     'mvc.model.path'=>'/models',
     'mvc.controller.path'=>'/controllers',
     'mvc.view.path'=>'/views',
-    'mvc.view.cache.path'=>'/views/cache'
 
 ];
 

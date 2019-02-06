@@ -47,10 +47,9 @@ class MvcModule{
     private $app;
     
     private $_view_path='';
-    private $_view_cache=null;
     /**
      * 
-     * @var QuickView
+     * @var Boof
      */
     private $_view=null;
     
@@ -73,7 +72,6 @@ class MvcModule{
         //view
         
         $this->_view_path=BASEPATH.$app->setting('mvc.view.path');
-        $this->_view_cache=BASEPATH.$app->setting('mvc.view.cache.path');
         
         $app->add_function('view',array($this,'view'));
         $app->add_function('add_view_function',array($this,'add_view_function'));
@@ -135,11 +133,8 @@ class MvcModule{
          $this->_view->addFunction($name,$func);
     }
     private function makeView(){
-        load_file('/quick/exteras/QuickView.php');
-        $this->_view=new QuickView(
-            $this->_view_path,
-            $this->_view_cache
-        );
+        load_file('/quick/exteras/boof.php/Boof.php');
+        $this->_view=new Boof($this->_view_path);
     }
     /**
      * return controler by name

@@ -1,0 +1,3 @@
+[submodule "exteras/boof.php"]
+	path = exteras/boof.php
+	url = https://github.com/srfirouzi/boof.php
