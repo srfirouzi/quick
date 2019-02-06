@@ -5,7 +5,17 @@ fast,dynamic,simplex,module base micro framework for php
 ---
 # install
 
-only add quick directory to your project( or only git clone on root project),and config .htaccess by this format, and add setting.php in project root
+only git clone on root project and update summodule
+
+```bash
+git clone https://github.com/srfirouzi/quick
+cd quick
+git submodule init
+git submodule update
+
+```
+
+,tham config .htaccess by this format, and add setting.php in project root
 
 ## .htaccess
 
