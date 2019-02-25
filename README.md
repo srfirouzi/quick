@@ -1,3 +1,6 @@
+# this project stop 
+new use [fast](https://github.com/srfirouzi/fast)
+
 # quick micro framework (alpha Version )
 
 fast,dynamic,simplex,module base micro framework for php
